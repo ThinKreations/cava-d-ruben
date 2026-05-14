@@ -6,22 +6,47 @@
 
 .inner_container{
   margin-top: 70px;
-  background-color: var(--inner-background);
+  background-color: var(--inner);
   padding: 1.4vw;
   padding-bottom: 0;
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 
 .card_container{
-  border: 1px solid rgba(200,200,200,0.5);
-  background-color: rgba(200,200,200,0.03);
+  background-color: rgba(0,0,8,0.3);
   margin: auto;
   margin-top: 20px;
-  width: 99%;
-  height: calc(100vh - 26.5vh); /* Pendiente */
+  width: 94%;
+  height: calc(100vh - 33vh); /* Pendiente */
+  border-radius: 8px;
+
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  overflow-y: auto;
+}
+.card_container:not(:has(> div:nth-child(4))) > div {
+  flex-grow: 1;
+}
+.card_container::-webkit-scrollbar{
+  -webkit-appearance: none;
+  width:16px;
+}
+.card_container::-webkit-scrollbar-corner{
+  background-color: red;
+}
+
+.card_container::-webkit-scrollbar-thumb{
+  background-color: var(--border);
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: padding-box;
 }
 
 .link{
   text-decoration: none;
   color: var(--foreground);
+}
+.link:hover{
+  text-decoration: underline;
 }

@@ -1,5 +1,5 @@
 body{
-  background-color: var(--inner-background);
+  background-color: var(--inner);
   margin: 0px;
   padding: 0px;
   color: var(--foreground);
@@ -7,21 +7,23 @@ body{
 
 body::-webkit-scrollbar{
   -webkit-appearance: none;
-  background-color: rgb(55, 55, 70);
+  background-color: var(--outer);
   width: 18px;
 }
 body::-webkit-scrollbar-thumb{
-  background-color: var(--foreground);
-  border: 7px solid var(--outer-background);
+  background-color: var(--border);
+  border: 6px solid var(--outer);
   border-radius: 100px;
 }
 
 :root {
   /* page */
-  --outer-background: rgb(55, 55, 70);
-  --inner-background: rgb(35, 35, 50); /* El principal */
-  --foreground: rgb(250,250,250);
+  --outer: rgb(55, 55, 70);
+  --inner: rgb(30, 30, 45); /* El principal */
+  --border: rgb(90, 90, 105);
+  --foreground: rgb(250,250,255);
 
+  --card: rgba(200,200,255,0.06)
 
   /* colores pro */
 
