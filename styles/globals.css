@@ -1,8 +1,32 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body{
+  background-color: var(--inner-background);
+  margin: 0px;
+  padding: 0px;
+  color: var(--foreground);
 }
 
+body::-webkit-scrollbar{
+  -webkit-appearance: none;
+  background-color: rgb(55, 55, 70);
+  width: 18px;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: var(--foreground);
+  border: 7px solid var(--outer-background);
+  border-radius: 100px;
+}
+
+:root {
+  /* page */
+  --outer-background: rgb(55, 55, 70);
+  --inner-background: rgb(35, 35, 50); /* El principal */
+  --foreground: rgb(250,250,250);
+
+
+  /* colores pro */
+
+}
+/*
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
@@ -40,3 +64,5 @@ a {
     color-scheme: dark;
   }
 }
+  */
+

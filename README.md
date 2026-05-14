@@ -2,13 +2,13 @@
 
 Equipo 4.
 
-Juarez Castillo Ruben Gabriel
-Nápoles Munguía José de Jesús
-Reyes Fuentes Mariana Montserrat
-Rosas Valdez Axel Brandon
-Segundo Vargas Josué
-Soto Navarro Viviana
-Terrones Martinez Jesús Jonathan
+- Juarez Castillo Ruben Gabriel
+- Nápoles Munguía José de Jesús
+- Reyes Fuentes Mariana Montserrat
+- Rosas Valdez Axel Brandon
+- Segundo Vargas Josue Armando
+- Soto Navarro Viviana
+- Terrones Martinez Jesús Jonathan
 
 ```bash
 npm run dev
