@@ -1,7 +1,9 @@
-import { Line, LineChart } from 'recharts'
+import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts'
 import { RechartsDevtools } from '@recharts/devtools'
 
 import styles from "@/styles/Component.module.css"
+import { BiBorderRadius } from 'react-icons/bi'
+
 
 const datos = [
     {
@@ -42,12 +44,19 @@ const datos = [
     },
 ];
 
-export default function Card(data) {
+
+
+
+export default function LineCard(data) {
+    console.log(data)
     return (
         <div className={styles.card_cont}>
             <div className={styles.card}>
-                <LineChart className={styles.chart} responsive data={datos}>
-                    <Line dataKey="uv" />
+                <LineChart className={styles.chart} responsive data={data.data}>
+                    <Line dataKey={"value"} />
+                    <CartesianGrid stroke="rgba(200,200,225,0.3)" strokeDasharray="4 4" />
+                    <Tooltip labelStyle={{ color: 'rgb(100,100,125)', fontSize: '16px' }} />
+                    <XAxis dataKey="name" height={20} />                    <YAxis label={{ value: 'Value', position: 'inside', angle: -90 }} />
                     <RechartsDevtools />
                 </LineChart>
 

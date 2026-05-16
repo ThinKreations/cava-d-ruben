@@ -7,8 +7,6 @@
     padding: 6px;
     letter-spacing: 6px;
     box-shadow: 0px 0px 150px rgba(0,0,10,0.15);
-    position: fixed;
-    width: 100%;
     top: 0px;
 }
 .logo{
@@ -23,9 +21,9 @@
 }
 .logo_container:hover{
     cursor: pointer;
-    text-decoration: underline;
 }
 .header_btn{
+    width: 170px;
     height: auto;
     margin: 5px;
     margin-right: 10px;
@@ -33,13 +31,13 @@
     background-color: transparent;
     border: 1px solid transparent;
     outline: none;
-    letter-spacing: 1px;
     font-size: 16px;
-    color: rgba(200, 200, 200, 0.75);
+    color: rgba(200,200,220);
 }
 .header_btn:hover{
     cursor: pointer;
     color: var(--foreground);
+    letter-spacing: 1;
 }
 
 .footer{
@@ -95,12 +93,15 @@
 
 .card_cont{
     text-align: center;
-    width: 22.5%;
-    margin: 10px;
+    width: 31.5%;
+    min-width: 275px;
+    margin: 5px;
     padding: 5px;
+    margin-bottom: 10px;
     max-height: 60vh;
 }
 .card_label{
+    padding-bottom: 5px;
     color: var(--border);
 }
 .card{

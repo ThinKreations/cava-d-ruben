@@ -20,7 +20,7 @@ body::-webkit-scrollbar-thumb{
   /* page */
   --outer: rgb(55, 55, 70);
   --inner: rgb(30, 30, 45); /* El principal */
-  --border: rgb(90, 90, 105);
+  --border: rgb(150, 150, 170);
   --foreground: rgb(250,250,255);
 
   --card: rgba(200,200,255,0.06)

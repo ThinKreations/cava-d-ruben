@@ -5,7 +5,6 @@
 }
 
 .inner_container{
-  margin-top: 70px;
   background-color: var(--inner);
   padding: 1.4vw;
   padding-bottom: 0;
@@ -17,15 +16,15 @@
   margin: auto;
   margin-top: 20px;
   width: 94%;
-  height: calc(100vh - 33vh); /* Pendiente */
+  height: calc(100vh - 30vh); /* Pendiente */
   border-radius: 8px;
-
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
   overflow-y: auto;
+  overflow-x: hidden;
 }
-.card_container:not(:has(> div:nth-child(4))) > div {
+.card_container:not(:has(> div:nth-child(3))) > div {
   flex-grow: 1;
 }
 .card_container::-webkit-scrollbar{
@@ -33,7 +32,7 @@
   width:16px;
 }
 .card_container::-webkit-scrollbar-corner{
-  background-color: red;
+  appearance: none;
 }
 
 .card_container::-webkit-scrollbar-thumb{
