@@ -53,6 +53,7 @@ export async function getServerSideProps() {
   });
   const resJSON = await res.json();
 
+  console.log(resJSON);
   const chartData = {};
 
   Object.entries(resJSON).forEach(([content, { tipo, data }]) => {
