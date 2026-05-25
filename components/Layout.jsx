@@ -1,12 +1,16 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
 import logo from "@/src/logo.png"
 
 import styles from "@/styles/Home.module.css"
 import components from "@/styles/Component.module.css"
 
+
 export default function Layout({ children }) {
+    const router = useRouter()
+
     return (<>
         <div className={styles.container}>
             <header className={components.header}>
@@ -15,8 +19,8 @@ export default function Layout({ children }) {
                     <span style={{ 'fontSize': '30px' }}>Cava D'Ruben</span>
                 </div>
                 <div className={components.header_buttons}>
-                    <button className={components.header_btn}>{`[ Inicio ]`}</button>
-                    <button className={components.header_btn}>{`[ Calendario ]`}</button>
+                    <button className={components.header_btn} onClick={() => router.push('/')}>{`[ Inicio ]`}</button>
+                    <button className={components.header_btn} onClick={() => router.push('calendar')}>{`[ Calendario ]`}</button>
                     <button className={components.header_btn}>{`[ Cava Virtual ]`}</button>
                 </div>
             </header>

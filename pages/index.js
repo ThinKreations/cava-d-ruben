@@ -7,13 +7,14 @@ import MainHead from "@/components/MainHead";
 import Layout from "@/components/Layout";
 import SearchBar from "@/components/SearchBar";
 import LineCard from "@/components/cards/LineCard";
+import BarCard from "@/components/cards/BarCard";
 
 export default function Home({ raw, charts }) {
   const [term, setTerm] = useState(0); //Por el momento lo dejamos así xd luego lo hacemos funcionar
 
   return (
     <>
-      <MainHead title="Cava D'Rubén PRO" />
+      <MainHead title="Cava D'Rubén" />
       <Layout>
         <SearchBar />
         <div className={styles.card_container}>
@@ -28,7 +29,11 @@ export default function Home({ raw, charts }) {
                   />
                 );
               } else if (chart.type == "Bar") {
-                // Pues imprime barras xdXdxDXD
+                <BarCard
+                  label={chart.key}
+                  data={chart.formattedData}
+                  key={index}
+                />;
               }
             })
           ) : (
@@ -53,7 +58,6 @@ export async function getServerSideProps() {
   });
   const resJSON = await res.json();
 
-  console.log(resJSON);
   const chartData = {};
 
   Object.entries(resJSON).forEach(([content, { tipo, data }]) => {
