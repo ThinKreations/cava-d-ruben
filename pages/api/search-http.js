@@ -47,22 +47,17 @@ export async function proveedores() {
 }
 
 export const search = async (c1, e1, c2, e2) => {
-  try{
-    
-  }catch(e){
-    console.log(e);
-  }
-
-
-  try{
-    const res = await fetch(`localhost:8000/buscar?clase1=${c1}+clase2=${c2}+termino1=${e1}+termino2=${e2}`,{
-      method: "GET",
-      headers:{
-        "Content-type":"application/json",
-      }
-    })
-  }
-
+  try {
+    const res = await fetch(
+      `localhost:8000/buscar?clase1=${c1}+clase2=${c2}+termino1=${e1}+termino2=${e2}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json",
+        },
+      },
+    );
+  } catch (e) {}
 };
 
 /*
