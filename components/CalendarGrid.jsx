@@ -24,7 +24,6 @@ const CalendarGrid = ({ eventos = [], año = 2026, mes = 4 }) => {
             <div className="calendar-month">
                 {nombresMeses[mes]} {año}
             </div>
-
             <div className="calendar-weekdays">
                 {diasSemana.map((dia, index) => (
                     <div key={`header-${index}`} className="weekday">

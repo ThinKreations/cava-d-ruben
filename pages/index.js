@@ -1,6 +1,7 @@
 import styles from "@/styles/Home.module.css";
 import { useEffect, useState } from "react";
 import { lineGraph } from "@/pages/logic";
+import { barGraph } from "@/pages/logic";
 
 /* Componentes */
 import MainHead from "@/components/MainHead";
@@ -29,11 +30,13 @@ export default function Home({ raw, charts }) {
                   />
                 );
               } else if (chart.type == "Bar") {
-                <BarCard
-                  label={chart.key}
-                  data={chart.formattedData}
-                  key={index}
-                />;
+                return (
+                  <BarCard
+                    label={chart.key}
+                    data={chart.formattedData}
+                    key={index}
+                  />
+                );
               }
             })
           ) : (
@@ -48,6 +51,7 @@ export default function Home({ raw, charts }) {
 export async function getServerSideProps() {
   const transformers = {
     Line: lineGraph,
+    Bar: barGraph,
   };
 
   const res = await fetch("http://localhost:8000/dashboard", {

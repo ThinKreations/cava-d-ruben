@@ -12,7 +12,7 @@ export default function LineCard(data) {
                     <Line dataKey={"value"} />
                     <CartesianGrid stroke="rgba(200,200,225,0.3)" strokeDasharray="4 4" />
                     <Tooltip labelStyle={{ color: 'rgb(100,100,125)', fontSize: '16px' }} />
-                    <XAxis dataKey="name" height={20} />
+                    <XAxis dataKey="name" />
                     <YAxis width={'auto'} />
                     <RechartsDevtools />
                 </LineChart>

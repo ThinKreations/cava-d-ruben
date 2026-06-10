@@ -31,6 +31,8 @@ export default function SearchBar() {
     const elementosFila1 = opciones_por_clase[claseFila1] || [];
     const elementosFila2 = opciones_por_clase[claseFila2] || [];
 
+
+
     useEffect(() => {
         setElementoFila1("");
     }, [claseFila1]);
@@ -38,6 +40,7 @@ export default function SearchBar() {
     useEffect(() => {
         setElementoFila2("");
     }, [claseFila2]);
+
 
     return (
         <div className={styles.search_container}>
@@ -61,13 +64,13 @@ export default function SearchBar() {
                     ))}
                 </select>
                 {IconoQuitar()}
-                <select defaultValue="tiempo">
-                    <option disabled>Tiempo</option>
-                    <option value="tiempo1">1 semana</option>
-                    <option value="tiempo2">1 mes</option>
-                    <option value="tiempo3">3 meses</option>
-                </select>
+
+                <input
+                    type="date"
+                >
+                </input>
             </div>
+
 
             <div className={styles.fila}>
                 <select value={claseFila2} onChange={(e) => setClaseFila2(e.target.value)}>
@@ -78,6 +81,7 @@ export default function SearchBar() {
                     <option value="vinos">Vinos</option>
                     <option value="proveedor">Proveedor</option>
                 </select>
+
                 <select value={elementoFila2} onChange={(e) => setElementoFila2(e.target.value)}>
                     <option value="" disabled hidden>
                         Elementos disponibles
@@ -86,11 +90,19 @@ export default function SearchBar() {
                         <option key={index} value={item.toLowerCase()}>
                             {item}
                         </option>
+
                     ))}
                 </select>
+
                 {IconoQuitar()}
-                <div style={{ 'textAlign': 'right', 'color': 'rgba(250,250,250,0.5)' }}>n elementos encontrados</div>
+
+                <input
+                    type="date"
+                >
+                </input>
             </div>
+
+
         </div>
 
     )
