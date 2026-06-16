@@ -26,16 +26,12 @@ export default function SearchBar({ selects, onResults }) {
             onResults(null);
             return;
         }
-
-
         let cancel = false;
         buscar(filas)
             .then(data => {
-                console.log("respuesta buscar:", data);   // ← qué llega
                 if (!cancel) onResults(data);
             })
             .catch(e => console.log(e))
-
         return () => { cancel = true }
     }, [claseFila1, claseFila2, elementoFila1, elementoFila2, onResults])
 
@@ -60,18 +56,19 @@ export default function SearchBar({ selects, onResults }) {
                         return <option key={id} value={id}>{label}</option>;
                     })}
                 </select>
-
-                <div style={{ 'display': 'flex', 'alignItems': 'center' }}>
+                <div />
+                <div style={{ 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'end' }}>
                     <span style={{ 'color': 'rgba(180,180,200,)' }}>Inicio:</span>
                     <input
                         type="date"
+                        style={{ 'width': '50%', 'marginLeft': '10px' }}
                     >
                     </input>
-                </div>
-                <div style={{ 'display': 'flex', 'alignItems': 'center' }}>
-                    <span style={{ 'color': 'rgba(180,180,200,1)' }}>Fin:</span>
+
+                    <span style={{ 'color': 'rgba(180,180,200,1)', 'marginLeft': '10px' }}>Fin:</span>
                     <input
                         type="date"
+                        style={{ 'width': '50%', 'marginLeft': '10px' }}
                     >
                     </input>
                 </div>

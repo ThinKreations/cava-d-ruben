@@ -25,7 +25,12 @@ export default function LineCard({ label, data, series = [] }) {
                             dataKey={s.dataKey}
                             name={s.name}
                             stroke={s.color}
-                            dot={false}
+                            dot={{
+                                fill: 'var(--color-surface-base)',
+                            }}
+                            activeDot={{
+                                stroke: 'var(--color-surface-base)',
+                            }}
                         />
                     ))}
                 </LineChart>

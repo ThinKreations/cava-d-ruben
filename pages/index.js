@@ -13,6 +13,7 @@ export default function Home({ raw, charts, selects }) {
 
   const handleResultados = useCallback(
     (data) => {
+      console.log(data);
       if (!data) {
         setActiveCharts(charts);
         return;
@@ -57,7 +58,7 @@ export default function Home({ raw, charts, selects }) {
 
 export async function getServerSideProps() {
   const [resDash, resGeneral] = await Promise.all([
-    fetch("http://localhost:8000/dashboard", {
+    fetch("http://localhost:8000/buscar/", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     }),
@@ -65,9 +66,9 @@ export async function getServerSideProps() {
   ]);
   const resJSON = await resDash.json();
   console.log(resJSON);
+  console.log(resGeneral);
 
   const selects = await resGeneral.json();
-
   return {
     props: {
       raw: resJSON,

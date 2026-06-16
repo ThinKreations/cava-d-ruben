@@ -1,7 +1,7 @@
 const PALETTE = [
-  "rgb(180,180,205)",
-  "rgb(125,165,215)",
-  "rgb(205,145,165)",
+  "rgb(180,180,210)",
+  "rgb(125,165,220)",
+  "rgb(210,145,165)",
   "rgb(150,195,180)",
   "rgb(215,190,150)",
 ];
@@ -17,7 +17,7 @@ const buildChart = (type) => (key, data) => {
   }
 
   const columns = Object.keys(data[0]);
-  const nameKey = columns[0]; // Eje x xd
+  const nameKey = columns[0]; // Eje xd
   const seriesKeys = columns.slice(1); // Todos los datos, sean barras o series
 
   const formattedData = data.map((item) => {

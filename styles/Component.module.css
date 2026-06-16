@@ -55,7 +55,7 @@
 
 .search_container select,
 .search_container input[type="date"]{
-    background-color: transparent;
+    background-color: var(--inner);
     padding: 5px ;
     color: var(--foreground);
     outline: none;
@@ -63,17 +63,33 @@
     border-radius: 4px;
     font-family: "Anonymous Pro";
     font-size: 14px;
-    color-scheme: dark;
     box-sizing: border-box;
     width: 100%;
+    color-scheme: dark;
 }
+
+
+.search_container select::-webkit-scrollbar{
+  -webkit-appearance: none;
+  width:16px;
+}
+.search_container select::-webkit-scrollbar-corner{
+  appearance: none;
+}
+
+.search_container select::-webkit-scrollbar-thumb{
+  background-color: var(--border);
+  border: 6px solid transparent;
+  border-radius: 10px;
+  background-clip: padding-box;
+}
+
 .search_container select:hover{
     border: 1px solid var(--border);
     cursor: pointer;
 }
 
 .search_container select option{
-    color: black;
     border: none;
     outline: none;
 }
