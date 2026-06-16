@@ -1,0 +1,183 @@
+.calRoot * {
+  box-sizing: border-box;
+}
+
+.calRoot {
+  font-family: "Anonymous Pro", monospace;
+  color: var(--foreground);
+  padding: 1.4vw;
+}
+
+.calLayout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* ── Calendario ── */
+.calTable {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 600px;
+  flex-shrink: 0;
+  background-color: var(--card);
+}
+
+.calHeader {
+  background-color: rgb(55, 55, 70);
+  color: var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+}
+
+.calNavBtn {
+  background: none;
+  border: none;
+  color: var(--foreground);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  padding: 0 4px;
+  font-family: inherit;
+  transition: opacity 0.15s;
+}
+.calNavBtn:hover { opacity: 0.65; }
+
+.calMonthTitle {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.calWeekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: rgba(0, 0, 8, 0.3);
+  border-bottom: 1px solid var(--border);
+}
+
+.calWeekday {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--border);
+  border-right: 1px solid var(--border);
+  letter-spacing: 0.06em;
+}
+.calWeekday:last-child { border-right: none; }
+
+.calGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calCell {
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  min-height: 90px;
+  padding: 8px 0 0 8px;
+  font-size: 14px;
+  color: var(--foreground);
+  cursor: default;
+  position: relative;
+  transition: background 0.15s;
+  user-select: none;
+}
+.calGrid > .calCell:nth-child(7n) { border-right: none; }
+
+.calCellEmpty {
+  background-color: rgba(0, 0, 8, 0.2);
+  opacity: 0.4;
+}
+
+.calCellEvent {
+  background-color: #b8e04a;
+  color: #1a1a1a;
+  cursor: pointer;
+  font-weight: 700;
+}
+.calCellEvent:hover { background-color: #a5cc38; }
+
+.calCellSelected {
+  background-color: #b8e04a;
+  color: #1a1a1a;
+  outline: 2.5px solid #6a9e00;
+  outline-offset: -2px;
+  font-weight: 700;
+}
+
+.calEventDot {
+  width: 5px;
+  height: 5px;
+  background-color: #1a1a1a;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 7px;
+  right: 8px;
+}
+
+/* ── Sidebar ── */
+.calSidebar {
+  flex: 1;
+  min-width: 275px;
+  max-height: calc(100vh - 25vh);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.calSidebar::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 16px;
+}
+.calSidebar::-webkit-scrollbar-corner {
+  appearance: none;
+}
+.calSidebar::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 100px;
+  border: 5px solid transparent;
+  background-clip: padding-box;
+}
+
+.calEmptyMsg {
+  color: var(--border);
+  font-size: 13px;
+  padding: 16px 0;
+}
+
+.calCard {
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 12px 14px;
+  background-color: var(--card);
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--foreground);
+  cursor: pointer;
+  transition: border-color 0.15s, background-color 0.15s;
+}
+.calCard:hover { border-color: #b8e04a; }
+
+.calCardHighlight {
+  border-left: 3px solid #b8e04a;
+  background-color: rgba(184, 224, 74, 0.08);
+}
+
+.calCardTitle {
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 2px;
+  letter-spacing: 0.04em;
+}
+
+.calCardField { color: var(--border); }
+.calCardField span { color: var(--foreground); }

@@ -28,7 +28,7 @@ export default function Layout({ children }) {
                 {children}
             </div>
             <footer className={components.footer}>
-                <span className={components.footer_content}>{`Guapiicsa 2026 | Juárez Castillo Rubén Gabriel · Nápoles Munguía José de Jesús · Rosas Valdez Axel Brandon · Segundo Vargas Josué · Soto Navarro Viviana · Terrones Martinez Jesús Jonathan | GitHub `}<Link href="https://github.com/ThinKreations/cava-d-ruben" className={styles.link} target="_blank">{`[Front]`}</Link> · <Link href="https://github.com/ElOsasInc/cava_pro_analytics-API-" className={styles.link} target="_blank">{`[Back]`}</Link></span>
+                <span className={components.footer_content}>{`Guapiicsa 2026 | Juárez Castillo Rubén Gabriel · Nápoles Munguía José de Jesús · Rosas Valdez Axel Brandon · Segundo Vargas Josue Armando · Soto Navarro Viviana · Terrones Martinez Jesús Jonathan | GitHub `}<Link href="https://github.com/ThinKreations/cava-d-ruben" className={styles.link} target="_blank">{`[Front]`}</Link> · <Link href="https://github.com/ElOsasInc/cava_pro_analytics-API-" className={styles.link} target="_blank">{`[Back]`}</Link></span>
             </footer>
 
         </div>

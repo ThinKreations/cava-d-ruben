@@ -6,7 +6,7 @@
 
 .inner_container{
   background-color: var(--inner);
-  padding: 1.4vw;
+  padding: 1.5vw;
   padding-bottom: 0;
   margin-bottom: 5px;
 }
@@ -15,14 +15,15 @@
   background-color: rgba(0,0,8,0.3);
   margin: auto;
   margin-top: 20px;
-  width: 95%;
-  height: calc(100vh - 25vh); /* Pendiente */
+  width: 98%;
+  height: calc(100vh - 21vh);
   border-radius: 8px;
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
   overflow-y: auto;
   overflow-x: hidden;
+  box-shadow: inset 0px 0px 5px rgba(0,0,8,0.2);
 }
 .card_container:not(:has(> div:nth-child(3))) > div {
   flex-grow: 1;

@@ -18,8 +18,8 @@ body::-webkit-scrollbar-thumb{
 
 :root {
   /* page */
-  --outer: rgb(55, 55, 70);
-  --inner: rgb(30, 30, 45); /* El principal */
+  --outer: rgb(58, 58, 73);
+  --inner: rgb(40, 40, 55); /* El principal */
   --border: rgb(150, 150, 170);
   --foreground: rgb(250,250,255);
 

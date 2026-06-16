@@ -1,14 +1,25 @@
-import React from 'react';
+import styles from '@/styles/Calendar.module.css';
 
-const DayCard = ({ id = "000", fecha = "DD/MM/AAAA", productos = "Sin productos", proveedor = "Desconocido" }) => {
+export default function DayCard({ evento, highlighted = false }) {
     return (
-        <div className="border border-black rounded-lg p-4 mb-4 bg-[#e0e0e0] font-mono text-sm shadow-sm">
-            <p className="font-bold mb-2 text-base">Pedido #{id}</p>
-            <p className="mb-1"><span className="font-semibold">Fecha estimada:</span> {fecha}</p>
-            <p className="mb-1"><span className="font-semibold">Productos:</span> {productos}</p>
-            <p><span className="font-semibold">Proveedor:</span> {proveedor}</p>
+        <div className={`${styles.calCard} ${highlighted ? styles.calCardHighlight : ""}`}>
+            <div className={styles.calCardTitle}>
+                {evento.tipo} #{evento.id}
+            </div>
+            <div className={styles.calCardField}>
+                Fecha estimada: <span>{evento.fecha}</span>
+            </div>
+            <div className={styles.calCardField}>
+                Productos: <span>{evento.productos}</span>
+            </div>
+            <div className={styles.calCardField}>
+                Proveedor: <span>{evento.proveedor}</span>
+            </div>
+            {evento.notas && (
+                <div className={styles.calCardField}>
+                    Notas: <span>{evento.notas}</span>
+                </div>
+            )}
         </div>
     );
-};
-
-export default DayCard;
+}
