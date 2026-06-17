@@ -14,7 +14,7 @@ export default function LineCard({ label, data, series = [] }) {
                     />
                     <YAxis
                         width="auto"
-                        tick={{ fill: "rgb(160,160,190)", fontSize: 11 }}
+                        tick={{ fill: "rgb(160,160,190)", fontSize: 12 }}
                         stroke="rgba(200,200,225,0.35)"
                     />
                     <Tooltip labelStyle={{ color: "rgb(100,100,125)", fontSize: "16px" }} />

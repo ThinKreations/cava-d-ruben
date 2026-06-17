@@ -1,11 +1,13 @@
+'use client'
 import { useState, useCallback, useEffect } from "react";
 import styles from "@/styles/Calendar.module.css";
 import CalendarHeader from "./CalendarHeader";
 import CalendarGrid from "./CalendarGrid";
 import DayCard from "./DayCard";
-import { MOCK_EVENTOS, fetchEventos, getMonthEvents } from "@/libs/calendarUtils";
+import { getMonthEvents } from "@/libs/calendarUtils";
 
 export default function Calendar({
+    data,
     initialYear = new Date().getFullYear(),
     initialMonth = new Date().getMonth(),
 }) {
@@ -18,11 +20,9 @@ export default function Calendar({
 
 
     useEffect(() => {
-        setEventos(MOCK_EVENTOS);
+        setEventos(data);
         setLoading(false);
-
     }, []);
-
     const goToPrev = useCallback(() => {
         setSelectedKey(null);
         if (month === 0) { setYear((y) => y - 1); setMonth(11); }
@@ -62,6 +62,7 @@ export default function Calendar({
             </div>
         );
     }
+    console.log(eventos)
 
     return (
         <div className={styles.calRoot}>

@@ -17,7 +17,7 @@ export default function DayCard({ evento, highlighted = false }) {
             </div>
             {evento.notas && (
                 <div className={styles.calCardField}>
-                    Notas: <span>{evento.notas}</span>
+                    <span><b>{evento.notas}</b></span>
                 </div>
             )}
         </div>

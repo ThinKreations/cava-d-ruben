@@ -16,14 +16,14 @@
   margin: auto;
   margin-top: 20px;
   width: 98%;
-  height: calc(100vh - 21vh);
+  height: calc(100vh - 17vh);
   border-radius: 8px;
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
   overflow-y: auto;
   overflow-x: hidden;
-  box-shadow: inset 0px 0px 5px rgba(0,0,8,0.2);
+  box-shadow: inset 0px 0px 8px rgba(0,0,10,0.15);
 }
 .card_container:not(:has(> div:nth-child(3))) > div {
   flex-grow: 1;

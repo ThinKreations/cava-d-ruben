@@ -14,10 +14,10 @@ export default function BarCard({ label, data, series = [] }) {
                     />
                     <YAxis
                         width="auto"
-                        tick={{ fill: "rgb(160,160,190)", fontSize: 11 }}
+                        tick={{ fill: "rgb(160,160,190)", fontSize: 12 }}
                         stroke="rgba(200,200,225,0.35)"
                     />
-                    <Tooltip labelStyle={{ color: "rgb(100,100,125)", fontSize: "16px" }} cursor={{ fill: "rgba(180,180,205,0.15)" }} />
+                    <Tooltip labelStyle={{ color: "rgba(100,100,125,0.8)", fontSize: "16px" }} cursor={{ fill: "rgba(180,180,205,0.15)" }} />
                     {series.length > 1 && <Legend />}
                     {series.map((s) => (
                         <Bar key={s.dataKey} dataKey={s.dataKey} name={s.name} fill={s.color} />

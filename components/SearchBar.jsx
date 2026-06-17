@@ -14,26 +14,29 @@ export default function SearchBar({ selects, onResults }) {
     const [claseFila2, setClaseFila2] = useState("");
     const [elementoFila1, setElementoFila1] = useState("");
     const [elementoFila2, setElementoFila2] = useState("");
+    const [inicio, setInicio] = useState("");
+    const [fin, setFin] = useState("");
+
     useEffect(() => { setElementoFila1(""); }, [claseFila1]);
     useEffect(() => { setElementoFila2(""); }, [claseFila2]);
     useEffect(() => {
         const filas = [
             { clase: claseFila1, elemento: elementoFila1 },
-            { clase: claseFila2, elemento: elementoFila2 }
-        ].filter(f => f.clase || f.elemento);
+            { clase: claseFila2, elemento: elementoFila2 },
+        ].filter(f => f.clase || f.elemento || f.inicio || f.fin);
 
         if (filas.length === 0) {
             onResults(null);
             return;
         }
         let cancel = false;
-        buscar(filas)
+        buscar(filas, { ini: inicio, fin: fin })
             .then(data => {
                 if (!cancel) onResults(data);
             })
             .catch(e => console.log(e))
         return () => { cancel = true }
-    }, [claseFila1, claseFila2, elementoFila1, elementoFila2, onResults])
+    }, [claseFila1, claseFila2, elementoFila1, elementoFila2, inicio, fin, onResults])
 
     const elementosFila1 = listaDeClase(claseFila1, selects);
     const elementosFila2 = listaDeClase(claseFila2, selects);
@@ -44,7 +47,7 @@ export default function SearchBar({ selects, onResults }) {
         <div className={styles.search_container}>
             <div className={styles.fila}>
                 <select value={claseFila1} onChange={(e) => setClaseFila1(e.target.value)}>
-                    <option value="" disabled hidden>Clase ...</option>
+                    <option value="" disabled hidden>{`Clase (Vino o proveedor)`}</option>
                     <option value="vino">Vinos</option>
                     <option value="proveedor">Proveedores</option>
                 </select>
@@ -58,15 +61,19 @@ export default function SearchBar({ selects, onResults }) {
                 </select>
                 <div />
                 <div style={{ 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'end' }}>
-                    <span style={{ 'color': 'rgba(180,180,200,)' }}>Inicio:</span>
+                    <span style={{ 'color': 'rgba(180,180,200,0.8)', 'marginLeft': '10px' }}>Inicio:</span>
                     <input
+                        onChange={(e) => setInicio(e.target.value)}
+                        value={inicio}
                         type="date"
                         style={{ 'width': '50%', 'marginLeft': '10px' }}
                     >
                     </input>
 
-                    <span style={{ 'color': 'rgba(180,180,200,1)', 'marginLeft': '10px' }}>Fin:</span>
+                    <span style={{ 'color': 'rgba(180,180,200,0.8)', 'marginLeft': '10px' }}>Fin:</span>
                     <input
+                        onChange={(e) => setFin(e.target.value)}
+                        value={fin}
                         type="date"
                         style={{ 'width': '50%', 'marginLeft': '10px' }}
                     >
@@ -77,7 +84,7 @@ export default function SearchBar({ selects, onResults }) {
 
             <div className={styles.fila}>
                 <select value={claseFila2} onChange={(e) => setClaseFila2(e.target.value)}>
-                    <option value="" disabled hidden>Clase ...</option>
+                    <option value="" disabled hidden>{`Clase (Vino o proveedor)`}</option>
                     <option value="vino">Vinos</option>
                     <option value="proveedor">Proveedor</option>
                 </select>
@@ -95,6 +102,8 @@ export default function SearchBar({ selects, onResults }) {
                         setClaseFila2("");
                         setElementoFila1("");
                         setElementoFila2("");
+                        setInicio("");
+                        setFin("");
                     }}
                 >Limpiar campos
                 </button>

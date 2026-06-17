@@ -10,10 +10,8 @@ import BarCard from "@/components/cards/BarCard";
 
 export default function Home({ raw, charts, selects }) {
   const [activeCharts, setActiveCharts] = useState(charts);
-
   const handleResultados = useCallback(
     (data) => {
-      console.log(data);
       if (!data) {
         setActiveCharts(charts);
         return;
@@ -58,17 +56,16 @@ export default function Home({ raw, charts, selects }) {
 
 export async function getServerSideProps() {
   const [resDash, resGeneral] = await Promise.all([
-    fetch("http://localhost:8000/buscar/", {
+    fetch("http://localhost:8000/dashboard/", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     }),
     fetch("http://localhost:8000/general/"),
   ]);
   const resJSON = await resDash.json();
-  console.log(resJSON);
-  console.log(resGeneral);
 
   const selects = await resGeneral.json();
+
   return {
     props: {
       raw: resJSON,
