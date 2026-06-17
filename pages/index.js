@@ -63,9 +63,7 @@ export async function getServerSideProps() {
     fetch("http://localhost:8000/general/"),
   ]);
   const resJSON = await resDash.json();
-
   const selects = await resGeneral.json();
-
   return {
     props: {
       raw: resJSON,
